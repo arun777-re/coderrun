@@ -1,7 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "next/navigation";
 import Button from "../__components/Button";
-import { ROUTES } from "../constants/route";
+import { ROUTES } from "../constants/routes";
 import {motion, Variants} from 'framer-motion'
 
 const Banner = () => {

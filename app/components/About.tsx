@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Button from "../__components/Button";
 import { useRouter } from "next/navigation";
-import { ROUTES } from "../constants/route";
+import { ROUTES } from "../constants/routes";
 
 const AboutSection = () => {
   const router = useRouter();
