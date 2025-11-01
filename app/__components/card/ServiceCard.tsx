@@ -17,9 +17,9 @@ const ServiceCard: React.FC<Props> = ({ index, icon, title, desc }) => {
       data-aos-delay={index * 100}
       className="relative rounded-2xl p-8 transition-all duration-300
       bg-linear-to-br from-[#141414] to-[#1f1f1f] 
-      border border-white/10 shadow-lg hover:shadow-accent/30"
+      border border-white/10 shadow-lg hover:shadow-accent/30 flex flex-col items-center justify-center"
     >
-      <div className="text-4xl mb-4 text-accent">{icon}</div>
+      <div className="text-4xl mb-4 text-accent flex justify-center items-center">{icon}</div>
       <h3 className="text-xl font-semibold text-primary mb-3">{title}</h3>
       <p className="text-font leading-relaxed">{desc}</p>
 

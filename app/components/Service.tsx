@@ -1,7 +1,5 @@
 "use client";
-import React from "react";
 import ServiceCard from "../__components/card/ServiceCard";
-import {CarTaxiFrontIcon} from 'lucide-react'
 
 const Services = () => {
    const services = [

@@ -2,13 +2,22 @@
 import { usePathname, useRouter } from "next/navigation";
 import Button from "../__components/Button";
 import { ROUTES } from "../constants/routes";
-import {motion, Variants} from 'framer-motion'
+import {motion, Variants} from 'framer-motion';
+import React from "react";
 
-const Banner = () => {
+
+type BannerProps = {
+  title?:string;
+  subtitle?:string;
+}
+
+const Banner:React.FC<BannerProps> = ({
+  title,
+  subtitle
+}) => {
   const router = useRouter();
   const text = "Providing Scalable Solutions for Your Business";
 const params = usePathname();
-  const text1 = params.slice(1,params.length)
 
   const letterVariant:Variants = {
     hidden:{opacity:0,y:4},
@@ -60,7 +69,8 @@ const params = usePathname();
         />
       </div>
     </section>
-    <section className={`${params === '/' ? 'hidden' : 'visible'} relative w-screen h-[85vh] flex overflow-x-hidden items-center justify-center
+    <section className={`${params === '/' ? 'hidden' : 'visible'} relative w-screen h-[85vh] flex
+    items-center justify-center
      text-center bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] overflow-hidden`}>
       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0"></div>
 
@@ -69,7 +79,7 @@ const params = usePathname();
           className="text-3xl sm:text-5xl md:text-6xl font-normal mb-6 leading-snug text-accent"
           data-aos="fade-up"
         >
-      {text1.split("").map((char,index)=>(
+      {title && title.split("").map((char,index)=>(
         <motion.span
         key={index}
         custom={index}
@@ -87,7 +97,7 @@ const params = usePathname();
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          CoderRun Software Solutions
+          {subtitle}
         </p>
         <Button
           onClick={() => router.push(ROUTES.HOME)}
