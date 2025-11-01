@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #ffffff;
+  --secondary: #050505;
+  --accent:#ff5d5b;
+  --font:#cfcfcf;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-secondary: var(--secondary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -15,12 +17,53 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --secondary: #ededed;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--secondary);
+  font-family: Oswald, sans-serif;
+}
+
+@theme {
+  --font-rubik:"Oswald", sans-serif;
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-font: var(--font);
+  --color-secondary: var(--secondary);
+}
+
+@layer base {
+  h1 {
+    @apply text-3xl  sm:text-4xl md:text-5xl text-accent font-normal;
+    font-family: var(--font-rubik);
+  }
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl text-primary font-normal tracking-wider mb-2;
+    font-family: var(--font-rubik);
+    color: var(--color-accent);
+  }
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl text-primary font-normal tracking-wider mb-2;
+    font-family: var(--font-rubik);
+    color: var(--color-accent);
+  }
+  h4 {
+    @apply text-lg sm:text-xl md:text-2xl text-primary font-normal tracking-wider mb-2;
+    font-family: var(--font-rubik);
+    color: var(--color-accent);
+  }
+  h5 {
+    @apply text-base sm:text-lg md:text-xl text-primary font-normal tracking-wider hover:text-primary cursor-pointer;
+    font-family: var(--font-rubik);
+  }
+
+  p {
+    @apply text-accent text-sm font-normal leading-loose;
+  }
+  a{
+    @apply text-secondary hover:text-accent transition-colors duration-300;
+  }
 }
