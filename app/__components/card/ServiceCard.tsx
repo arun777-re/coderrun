@@ -24,7 +24,7 @@ const ServiceCard: React.FC<Props> = ({ index, icon, title, desc }) => {
       <p className="text-font leading-relaxed">{desc}</p>
 
       {/* Subtle accent glow effect */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 bg-gradient-to-tr from-accent/10 via-transparent to-transparent transition-opacity duration-500"></div>
+      <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 bg-linear-to-tr from-accent/10 via-transparent to-transparent transition-opacity duration-500"></div>
     </motion.div>
   );
 };
