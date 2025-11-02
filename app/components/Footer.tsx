@@ -4,7 +4,7 @@ import { BsFacebook, BsInstagram, BsLinkedin, BsWhatsapp } from 'react-icons/bs'
 import { motion } from 'framer-motion';
 
 const Footer = () => {
-  const links = ['Home', 'About', 'Services', 'Blog', 'Contact'];
+  const links = ['Home', 'About', 'Services', 'Contact'];
   const socials = [
     { icon: <BsWhatsapp size={15} />, href: 'https://wa.me/918000000000' },
     { icon: <BsFacebook size={15} />, href: 'https://facebook.com/coderrun' },
@@ -41,7 +41,7 @@ const Footer = () => {
             {links.map((link, i) => (
               <Link
                 key={i}
-                href={`/${link.toLowerCase()}`}
+                href={ link === 'Home' ? '/' :`/${link.toLowerCase()}`}
                 className="text-sm text-gray-300 hover:text-accent transition-colors duration-300 ease-in-out"
               >
                 {link}

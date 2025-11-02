@@ -12,6 +12,7 @@ const links = [
 ];
 
 const Navbar = () => {
+  const [mobileNav,setMobileNav] = React.useState<boolean>(false)
   const pathname = usePathname();
 
   return (
@@ -46,7 +47,7 @@ const Navbar = () => {
                 {link.name}
                 {/* underline animation */}
                 <span
-                  className={`absolute left-0 -bottom-1 h-[2px] w-full bg-accent scale-x-0 origin-left transition-transform duration-300 ${
+                  className={`absolute left-0 -bottom-1 h-0.5 w-full bg-accent scale-x-0 origin-left transition-transform duration-300 ${
                     pathname === link.href ? "scale-x-100" : "hover:scale-x-100"
                   }`}
                 ></span>
@@ -57,7 +58,33 @@ const Navbar = () => {
 
         {/* Mobile menu (optional later) */}
         <div className="md:hidden">
-          <button className="text-accent text-2xl">☰</button>
+          <button onClick={()=>setMobileNav(true)} className="text-accent text-2xl">☰</button>
+          {mobileNav && (
+            <nav className="w-full px-4 relative h-auto">
+              <ul className="flex flex-col gap-4 items-center justify-center relative w-full">
+                    {links.map((link, index) => (
+            <li key={index}>
+              <Link
+                href={link.href}
+                className={`relative text-font uppercase tracking-wide transition duration-300 ${
+                  pathname === link.href
+                    ? "text-accent font-semibold"
+                    : "hover:text-accent"
+                }`}
+              >
+                {link.name}
+                {/* underline animation */}
+                <span
+                  className={`absolute left-0 -bottom-1 h-0.5 w-full bg-accent scale-x-0 origin-left transition-transform duration-300 ${
+                    pathname === link.href ? "scale-x-100" : "hover:scale-x-100"
+                  }`}
+                ></span>
+              </Link>
+            </li>
+          ))}
+              </ul>
+            </nav>
+          )}
         </div>
       </div>
     </nav>
