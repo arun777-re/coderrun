@@ -11,8 +11,34 @@ const geistOswald = Oswald({
 
 
 export const metadata: Metadata = {
-  title: "CoderRun",
-  description: "CoderRun - Providing Scalable Solutions for your Business",
+  title: "CoderRun | Full-Stack Development & Automation Solutions",
+description:
+    "Coderrun helps you build scalable full-stack web apps, APIs, and automation systems with precision and performance.",
+  keywords: [
+    "coderrun",
+    "web development",
+    "full stack developer",
+    "nextjs developer",
+    "mern stack expert",
+    "automation systems",
+  ],
+  openGraph: {
+    title: "Coderrun",
+    description:
+      "Smart, scalable, and high-performance web development solutions.",
+    url: "https://coderrun.info",
+    siteName: "Coderrun",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Coderrun",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
