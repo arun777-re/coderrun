@@ -59,6 +59,10 @@ const AboutSection = () => {
             src="/images/banner-bg.jpg"
             alt="CoderRun Team"
             fill
+            width={1200}
+            height={630}
+            quality={85}
+            loading="lazy"
             className="object-cover rounded-2xl shadow-lg"
           />
         </motion.div>
