@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+import { X, Menu } from "lucide-react";
 
 const links = [
   { name: "Home", href: "/" },
@@ -12,33 +14,30 @@ const links = [
 ];
 
 const Navbar = () => {
-  const [mobileNav,setMobileNav] = React.useState<boolean>(false)
+  const [mobileNav, setMobileNav] = React.useState(false);
   const pathname = usePathname();
 
   return (
-    <nav
-      data-aos="fade-down"
-      className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/70 backdrop-blur-md border-b border-white/10 overflow-x-hidden"
-    >
-      <div className="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-white/10">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="relative w-36 h-16">
+        <Link href="/" className="relative w-36 h-12 flex items-center">
           <Image
             src="/images/logocompany.png"
             alt="company-logo"
             fill
-            className="object-contain object-center"
+            className="object-contain object-left"
             priority
           />
         </Link>
 
-        {/* Links */}
-        <ul className="hidden md:flex items-center gap-8">
+        {/* Desktop Links */}
+        <ul className="hidden md:flex items-center gap-10">
           {links.map((link, index) => (
             <li key={index}>
               <Link
                 href={link.href}
-                className={`relative text-font uppercase tracking-wide transition duration-300 ${
+                className={`relative text-font uppercase tracking-wide text-sm transition duration-300 ${
                   pathname === link.href
                     ? "text-accent font-semibold"
                     : "hover:text-accent"
@@ -56,37 +55,50 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile menu (optional later) */}
-        <div className="md:hidden">
-          <button onClick={()=>setMobileNav(true)} className="text-accent text-2xl">☰</button>
-          {mobileNav && (
-            <nav className="w-full px-4 relative h-auto">
-              <ul className="flex flex-col gap-4 items-center justify-center relative w-full">
-                    {links.map((link, index) => (
-            <li key={index}>
-              <Link
-                href={link.href}
-                className={`relative text-font uppercase tracking-wide transition duration-300 ${
-                  pathname === link.href
-                    ? "text-accent font-semibold"
-                    : "hover:text-accent"
-                }`}
-              >
-                {link.name}
-                {/* underline animation */}
-                <span
-                  className={`absolute left-0 -bottom-1 h-0.5 w-full bg-accent scale-x-0 origin-left transition-transform duration-300 ${
-                    pathname === link.href ? "scale-x-100" : "hover:scale-x-100"
-                  }`}
-                ></span>
-              </Link>
-            </li>
-          ))}
-              </ul>
-            </nav>
-          )}
-        </div>
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setMobileNav(!mobileNav)}
+          className="md:hidden text-accent focus:outline-none"
+        >
+          {mobileNav ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileNav && (
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -20, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden bg-[#0a0a0a]/95 backdrop-blur-md border-t border-white/10"
+          >
+            <ul className="flex flex-col items-center py-6 gap-6">
+              {links.map((link, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => setMobileNav(false)}
+                >
+                  <Link
+                    href={link.href}
+                    className={`relative text-lg uppercase tracking-wide ${
+                      pathname === link.href
+                        ? "text-accent font-semibold"
+                        : "text-font hover:text-accent"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
