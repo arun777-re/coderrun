@@ -5,6 +5,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Menu } from "lucide-react";
+import CoderrunLogo from "../__components/Logo";
 
 const links = [
   { name: "Home", href: "/" },
@@ -21,15 +22,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="relative w-36 h-12 flex items-center">
-          <Image
-            src="/images/logocompany.png"
-            alt="company-logo"
-            fill
-            className="object-contain object-left"
-            priority
-          />
-        </Link>
+     <CoderrunLogo/>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-10">
