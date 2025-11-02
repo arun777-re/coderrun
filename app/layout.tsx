@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google";
 import "./globals.css";
-import AOSInIt from "./components/AOS";
+import dynamic from "next/dynamic";
 
 const geistOswald = Oswald({
   variable: "--font-oswald",
@@ -41,6 +41,8 @@ description:
   },
 };
 
+const AOS = dynamic(()=>import("@/app/components/AOS"),{ssr:false});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,7 +53,7 @@ export default function RootLayout({
       <body
         className={`${geistOswald.variable}  antialiased`}
       >
-        <AOSInIt/>
+        <AOS/>
         {children}
       </body>
     </html>
