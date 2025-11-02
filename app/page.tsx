@@ -1,13 +1,15 @@
 import Navbar from "./components/Navbar";
 import Banner from "./components/Banner";
-import Services from "./components/Service";
 import AboutSection from "./components/About";
-import TechStack from "./components/TechStack";
 import Process from "./components/Process";
 import Testimonials from "./components/Testimonial";
 import Stats from "./components/Stats";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import dynamic from "next/dynamic";
+
+const TechStack = dynamic(()=>import('@/app/components/TechStack'))
+const Services = dynamic(()=>import('@/app/components/Service'))
 
 export default function Home() {
   return (
