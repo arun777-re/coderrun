@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
   },
   experimental:{
     optimizeCss:true,
-    optimizePackageImports:["framer-motion","react-icons"]
+    optimizePackageImports:["framer-motion","react-icons","lucide-react"]
   },
   compiler:{
     removeConsole:process.env.NODE_ENV === "production"
