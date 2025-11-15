@@ -39,7 +39,7 @@ const params = usePathname();
      text-center bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] overflow-hidden`}>
       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0">
       <Image
-      src={'/images/bg-4.jpg'}
+      src={'/images/bg-5.jpg'}
       alt="banner-image"
       fill
       loading="lazy"
@@ -81,7 +81,14 @@ const params = usePathname();
     <section className={`${params === '/' ? 'hidden' : 'visible'} relative w-screen h-[85vh] flex
     items-center justify-center
      text-center bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] overflow-hidden`}>
-      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0">
+       <Image
+      src={'/images/bg-4.jpg'}
+      alt="banner-image"
+      fill
+      loading="lazy"
+      className="w-full h-full object-fill object-center"
+      /></div>
 
       <div className="absolute w-full h-full  top-1/2 left-0 z-10 text-primary px-6">
         <h1
