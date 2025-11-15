@@ -4,6 +4,7 @@ import Button from "../__components/Button";
 import { ROUTES } from "../constants/routes";
 import {motion, Variants} from 'framer-motion';
 import React from "react";
+import Image from "next/image";
 
 
 type BannerProps = {
@@ -36,7 +37,15 @@ const params = usePathname();
     <>
     <section className={`${params === '/' ? 'visible' : 'hidden'} relative w-screen h-[85vh] flex overflow-x-hidden items-center justify-center
      text-center bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] overflow-hidden`}>
-      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0"></div>
+      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0">
+      <Image
+      src={'/images/coderrun-bg.jpg'}
+      alt="banner-image"
+      fill
+      loading="lazy"
+      className="w-full h-full object-fill object-center"
+      />
+      </div>
 
       <div className="absolute w-full h-full  top-1/2 left-0 z-10 text-primary px-6">
         <h1
@@ -52,7 +61,7 @@ const params = usePathname();
         animate="visible"
         className="inline-block text-accent"
         >
-{char === " " ? "\u00A0" : char}
+     {char === " " ? "\u00A0" : char}
         </motion.span>
       ))}
         </h1>
