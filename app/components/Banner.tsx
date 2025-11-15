@@ -49,7 +49,7 @@ const params = usePathname();
 
       <div className="absolute w-full h-full  top-1/2 left-0 z-10 text-primary px-6">
         <h1
-          className="text-3xl sm:text-5xl md:text-6xl font-normal mb-6 leading-snug text-accent"
+          className="text-3xl sm:text-5xl md:text-6xl font-normal mb-6 leading-snug text-white"
           data-aos="fade-up"
         >
       {text.split("").map((char,index)=>(
