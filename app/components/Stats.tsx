@@ -11,7 +11,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="py-16 bg-background text-center overflow-x-hidden">
+    <section className="py-16 bg-secondary/80 text-center overflow-x-hidden">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {stats.map((s, i) => (
           <motion.div

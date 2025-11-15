@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-neutral-900 text-white relative overflow-hidden">
+    <footer className="w-full bg-secondary/80 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* --- Brand Section --- */}
         <div>

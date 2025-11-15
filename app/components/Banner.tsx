@@ -35,11 +35,11 @@ const params = usePathname();
 
   return (
     <>
-    <section className={`${params === '/' ? 'visible' : 'hidden'} relative w-screen h-[85vh] flex overflow-x-hidden items-center justify-center
+    <section className={`${params === '/' ? 'visible' : 'hidden'} relative w-screen h-[98vh] flex overflow-x-hidden items-center justify-center
      text-center bg-linear-to-b from-[#0a0a0a] via-[#111] to-[#0a0a0a] overflow-hidden`}>
       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0">
       <Image
-      src={'/images/bg-2.jpg'}
+      src={'/images/bg-4.jpg'}
       alt="banner-image"
       fill
       loading="lazy"
