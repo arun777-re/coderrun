@@ -10,6 +10,7 @@ const Testimonials = dynamic(() => import("./components/Testimonial"), { ssr: fa
 const Stats = dynamic(() => import("./components/Stats"), { ssr: false });
 const Contact = dynamic(() => import("./components/Contact"), { ssr: false });
 const Footer = dynamic(() => import("./components/Footer"), { ssr: false });
+const Projects = dynamic(() => import("./components/Projects"), { ssr: false });
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Navbar />
       <Banner />
       <Services />
+      <Projects/>
       <TechStack />
       <Process />
       <Testimonials />

@@ -11,7 +11,7 @@ const stats = [
 
 const Stats = () => {
   return (
-    <section className="py-16 bg-secondary/80 text-center overflow-x-hidden">
+    <section className="py-16 bg-surface/80 text-center overflow-x-hidden">
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
         {stats.map((s, i) => (
           <motion.div
@@ -21,7 +21,7 @@ const Stats = () => {
             className="flex flex-col items-center justify-center"
           >
             <h3 className="text-4xl font-bold text-accent mb-2">{s.num}</h3>
-            <p className="text-font text-sm">{s.label}</p>
+            <p className="text-secondary text-sm">{s.label}</p>
           </motion.div>
         ))}
       </div>

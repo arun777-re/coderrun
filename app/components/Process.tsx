@@ -11,8 +11,8 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="py-20 bg-secondary/80 text-center overflow-x-hidden">
-      <h2 className="text-3xl md:text-4xl text-white mb-10" data-aos="fade-up">
+    <section className="py-20 bg-surface/80 text-center overflow-x-hidden">
+      <h2 className="text-3xl md:text-4xl text-primary mb-10" data-aos="fade-up">
         Our Process
       </h2>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto px-6">
@@ -20,12 +20,12 @@ const Process = () => {
           <motion.div
             key={i}
             whileHover={{ y: -8 }}
-            className="bg-secondary rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
+            className="bg-surface rounded-2xl p-6 shadow-lg hover:shadow-accent/40 transition-all duration-300"
             data-aos="fade-up"
             data-aos-delay={i * 100}
           >
             <h3 className="text-accent text-xl mb-2">{s.step}</h3>
-            <p className="text-font text-sm leading-relaxed">{s.desc}</p>
+            <p className="text-secondary text-sm leading-relaxed">{s.desc}</p>
           </motion.div>
         ))}
       </div>

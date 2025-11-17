@@ -36,30 +36,31 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-secondary/80  overflow-x-hidden" id="services">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2
-          className="text-4xl font-oswald font-bold text-primary mb-4"
-          data-aos="fade-up"
-        >
-          Our Services
-        </h2>
-        <p
-          className="text-font max-w-2xl mx-auto mb-14"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
-          Empowering businesses through scalable, secure, and efficient digital
-          solutions.
-        </p>
+<section className="py-20 bg-surface overflow-x-hidden" id="services">
+  <div className="max-w-6xl mx-auto px-6 text-center">
+    <h2
+      className="text-4xl font-bold text-primary mb-4"
+      data-aos="fade-up"
+    >
+      Our Services
+    </h2>
+    <p
+      className="text-secondary max-w-2xl mx-auto mb-14"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      Empowering businesses through scalable, secure, and efficient digital
+      solutions.
+    </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-          <ServiceCard key={index} index={index} {...service}/>
-          ))}
-        </div>
-      </div>
-    </section>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service, index) => (
+        <ServiceCard key={index} index={index} {...service} />
+      ))}
+    </div>
+  </div>
+</section>
+
   );
 };
 

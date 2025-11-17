@@ -15,7 +15,7 @@ const techs = [
 
 const TechStack = () => {
   return (
-    <section className="py-20 bg-secondary text-center overflow-x-hidden">
+    <section className="py-20 bg-surface text-center overflow-x-hidden">
       <h2 className="text-3xl md:text-4xl text-accent mb-10" data-aos="fade-up">
         Trusted Technologies Powering CoderRun
       </h2>
@@ -25,12 +25,12 @@ const TechStack = () => {
             key={i}
             whileHover={{ scale: 1.2 }}
             transition={{ type: "spring", stiffness: 200 }}
-            className="flex flex-col items-center text-font"
+            className="flex flex-col items-center text-secondary"
             data-aos="fade-up"
             data-aos-delay={i * 100}
           >
             <div className="text-5xl mb-2 text-accent">{t.icon}</div>
-            <p className="text-sm">{t.name}</p>
+            <p className="text-sm text-primary">{t.name}</p>
           </motion.div>
         ))}
       </div>

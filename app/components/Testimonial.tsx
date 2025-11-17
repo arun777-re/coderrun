@@ -22,7 +22,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-secondary text-center overflow-x-hidden ">
+    <section className="py-20 bg-surface text-center overflow-x-hidden">
       <h2 className="text-3xl md:text-4xl text-accent mb-10" data-aos="fade-up">
         What Our Clients Say
       </h2>
@@ -30,15 +30,15 @@ const Testimonials = () => {
         {testimonials.map((t, i) => (
           <motion.div
             key={i}
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 200 }}
+            whileHover={{ scale: .95 }}
+            transition={{ type: "spring", stiffness: 200,damping:26 }}
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            className="bg-background border border-accent/20 p-6 rounded-2xl shadow-lg"
+            className="bg-background border border-accent/20 p-6 rounded-2xl shadow-lg transition-shadow shadow-xl"
           >
-            <p className="text-font italic mb-4">"{t.review}"</p>
+            <p className="text-secondary italic mb-4">"{t.review}"</p>
             <h4 className="text-accent font-semibold">{t.name}</h4>
-            <p className="text-font text-sm">{t.role}</p>
+            <p className="text-secondary text-sm">{t.role}</p>
           </motion.div>
         ))}
       </div>

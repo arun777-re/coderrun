@@ -19,18 +19,17 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/80 backdrop-blur-lg border-b border-white/10">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/10">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+        {/* logo */}
      <CoderrunLogo/>
-
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-10">
           {links.map((link, index) => (
             <li key={index}>
               <Link
                 href={link.href}
-                className={`relative text-font uppercase tracking-wide text-sm transition duration-300 ${
+                className={`relative text-secondary uppercase tracking-wide text-sm transition duration-300 ${
                   pathname === link.href
                     ? "text-accent font-semibold"
                     : "hover:text-accent"
