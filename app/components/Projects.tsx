@@ -34,7 +34,7 @@ const projects: Project[] = [
 const Projects = () => {
     const router = useRouter()
 
-    const handleClick = (link) =>{
+    const handleClick = (link:string) =>{
         router.push(link)
     }
 
@@ -62,9 +62,9 @@ const Projects = () => {
             )}
             <h3 className="text-xl font-semibold text-primary mb-2">{p.title}</h3>
             <p className="text-secondary text-sm flex-1">{p.desc}</p>
-            {p.link && (
+            {p && p.link && (
               <a
-                 onClick={()=>handleClick(p.link)}
+                 onClick={()=>handleClick(p.link ?? "")}
                 target="_blank"
                 className="mt-4 inline-block text-accent font-semibold hover:underline"
               >
