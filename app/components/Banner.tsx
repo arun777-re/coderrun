@@ -47,7 +47,7 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
             preload="auto"
             className="w-full h-full object-cover z-10"
           />
-          <div className="absolute inset-0 bg-black/90 z-20" />
+          <div className="absolute inset-0 bg-black/80 z-20" />
         </div>
 
         <article className="absolute  w-full h-full top-1/2 left-0 z-30 text-white px-4 ">
