@@ -38,17 +38,19 @@ const params = usePathname();
     <section className={`${params === '/' ? 'visible' : 'hidden'} relative w-screen h-[98vh] flex overflow-x-hidden items-center justify-center
      text-center  overflow-hidden`}>
       <div className="relative h-full w-full">
-      <Image
-      src={'/images/bg-01.jpg'}
-      alt="banner-image"
-      fill
-      loading="lazy"
-      className="w-full h-full object-fill object-center filter-[hue-rotate(190deg)_saturate(1.2)]"
+      <video
+      src={'/images/banner.mp4'}
+      autoPlay
+      loop
+      muted
+      playsInline
+      preload="auto"
+      className="w-full h-full object-cover z-10"
       />
-      {/* <div className="absolute w-full h-full bg-black-60"/> */}
+      <div className="absolute inset-0 bg-black/90 z-20"/>
       </div>
 
-      <article className="absolute  w-full h-full top-1/2 left-0 z-10 text-white px-4 ">
+      <article className="absolute  w-full h-full top-1/2 left-0 z-30 text-white px-4 ">
         <h1
           className=" mb-6 leading-snug text-accent"
           data-aos="fade-up"
