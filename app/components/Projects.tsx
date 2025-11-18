@@ -14,9 +14,9 @@ import { useRef } from "react";
 const Projects = () => {
   const autoplay = useRef(
     Autoplay({
-      delay: 3000,              // 3 seconds autoplay
-      stopOnInteraction: false, // User scroll kare tab bhi autoplay chalta rahe
-      stopOnMouseEnter: true,   // Hover par ruk jaaye (UX best)
+      delay: 3000,             
+      stopOnInteraction: false,
+      stopOnMouseEnter: true, 
     })
   );
 
@@ -28,10 +28,10 @@ const Projects = () => {
 
       <div className="w-full px-4 md:px-6 h-auto">
         <Carousel
-          plugins={[autoplay.current]}  // <-- AUTOPLAY ADDED HERE
+          plugins={[autoplay.current]}
           opts={{
             align: "start",
-            loop: true                   // required for smooth autoplay
+            loop: true                
           }}
           className="w-full relative"
         >
