@@ -38,7 +38,14 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
      text-center  overflow-hidden`}
       >
         <div className="relative h-full w-full">
-          <video
+          <Image
+            src={"/images/bg-002.jpg"}
+            alt="banner-video"
+            fill
+            loading="lazy"
+            className="w-full h-full object-cover z-10"
+          />
+          {/* <video
             src={"/images/banner.mp4"}
             autoPlay
             loop
@@ -46,8 +53,8 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
             playsInline
             preload="auto"
             className="w-full h-full object-cover z-10"
-          />
-          <div className="absolute inset-0 bg-black/80 z-20" />
+          /> */}
+          <div className="absolute inset-0 bg-black/76 z-20" />
         </div>
 
         <article className="absolute  w-full h-full top-1/2 left-0 z-30 text-white px-4 ">
@@ -87,7 +94,7 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
       >
         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent z-0">
           <Image
-            src={"/images/bg-01.jpg"}
+            src={"/images/bg-00001.webp"}
             alt="banner-image"
             fill
             loading="lazy"

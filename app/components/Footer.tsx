@@ -4,7 +4,7 @@ import { BsFacebook, BsInstagram, BsLinkedin, BsWhatsapp } from 'react-icons/bs'
 import { motion } from 'framer-motion';
 
 const Footer = () => {
-  const links = ['Home', 'About', 'Services', 'Contact'];
+  const links = ['Home', 'Contact'];
   const socials = [
     { icon: <BsWhatsapp size={15} />, href: 'https://wa.me/918000000000' },
     { icon: <BsFacebook size={15} />, href: 'https://facebook.com/coderrun' },

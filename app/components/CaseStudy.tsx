@@ -1,40 +1,37 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import { CaseStudyProps, Projects } from "../types/data";
 
-type CaseStudyProps = {
-  title: string;
-  subtitle?: string;
-  heroImg?: string;
-  description: string;
-  techStack?: string[];
-  features?: string[];
-  liveLink?: string;
-  githubLink?: string;
-};
+
 
 const CaseStudy: React.FC<CaseStudyProps> = ({
   title,
-  subtitle,
-  heroImg,
   description,
+  image,
+  video,
   techStack,
   features,
   liveLink,
-  githubLink,
+  githubLink
 }) => {
   return (
     <section className="py-20 bg-surface text-center overflow-x-hidden max-w-6xl mx-auto px-6">
-      {heroImg && (
-        <img
-          src={heroImg}
-          alt={title}
-          className="w-full rounded-2xl mb-8 shadow-lg object-cover"
+      {video && (
+        <video
+          src={video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="h-[90vh] w-full rounded-2xl mb-8 shadow-lg object-cover"
         />
       )}
+      
 
       <h2 className="text-4xl md:text-5xl text-accent font-bold mb-4">{title}</h2>
-      {subtitle && <p className="text-secondary text-lg mb-6">{subtitle}</p>}
+      {title && <p className="text-secondary text-lg mb-6">{title}</p>}
 
       <p className="text-secondary mb-6">{description}</p>
 

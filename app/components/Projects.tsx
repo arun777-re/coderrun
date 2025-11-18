@@ -1,42 +1,24 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
-import {useRouter} from 'next/navigation'
-
-type Project = {
-  title: string;
-  desc: string;
-  link?: string;
-  img?: string;
-};
-
-const projects: Project[] = [
-  {
-    title: "E-Commerce Platform",
-    desc: "Full-featured MERN e-commerce system with authentication, cart, and payment integration.",
-    link: "/portfolio/123",
-    img: "/images/project-1.jpg",
-  },
-  {
-    title: "Portfolio Website",
-    desc: "Personal portfolio website built with Next.js, Tailwind CSS, and Framer Motion.",
-    link: "#",
-    img: "/images/project-2.jpg",
-  },
-  {
-    title: "Blog CMS",
-    desc: "Custom CMS for blogging with rich-text editor, SEO-friendly design, and admin dashboard.",
-    link: "#",
-    img: "/images/project-3.jpg",
-  },
-];
+import { ProjectsData } from "@/public/images/data/data";
+import ProjectCard from "../__components/card/ProjectCard";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 
 const Projects = () => {
-    const router = useRouter()
-
-    const handleClick = (link:string) =>{
-        router.push(link)
-    }
+  const autoplay = useRef(
+    Autoplay({
+      delay: 3000,              // 3 seconds autoplay
+      stopOnInteraction: false, // User scroll kare tab bhi autoplay chalta rahe
+      stopOnMouseEnter: true,   // Hover par ruk jaaye (UX best)
+    })
+  );
 
   return (
     <section className="py-20 bg-surface text-center overflow-x-hidden" id="projects">
@@ -44,35 +26,30 @@ const Projects = () => {
         Some of My Projects
       </h2>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-        {projects.map((p, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.05 }}
-            className="bg-background rounded-2xl p-6 shadow-lg hover:shadow-accent/40 transition-all duration-300 flex flex-col"
-            data-aos="fade-up"
-            data-aos-delay={i * 100}
-          >
-            {p.img && (
-              <img
-                src={p.img}
-                alt={p.title}
-                className="w-full h-40 object-cover rounded-lg mb-4"
-              />
-            )}
-            <h3 className="text-xl font-semibold text-primary mb-2">{p.title}</h3>
-            <p className="text-secondary text-sm flex-1">{p.desc}</p>
-            {p && p.link && (
-              <a
-                 onClick={()=>handleClick(p.link ?? "")}
-                target="_blank"
-                className="mt-4 inline-block text-accent font-semibold hover:underline"
+      <div className="w-full px-4 md:px-6 h-auto">
+        <Carousel
+          plugins={[autoplay.current]}  // <-- AUTOPLAY ADDED HERE
+          opts={{
+            align: "start",
+            loop: true                   // required for smooth autoplay
+          }}
+          className="w-full relative"
+        >
+          <CarouselContent className="px-10">
+            {ProjectsData.map((project, index) => (
+              <CarouselItem
+                key={index}
+                className="basis-full md:basis-1/2 lg:basis-1/3 px-2 py-4"
               >
-                View Project
-              </a>
-            )}
-          </motion.div>
-        ))}
+                <ProjectCard {...project} i={index} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          {/* Optional: Next/Prev Buttons */}
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );

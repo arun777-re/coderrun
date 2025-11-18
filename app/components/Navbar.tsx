@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
@@ -9,8 +8,6 @@ import CoderrunLogo from "../__components/Logo";
 
 const links = [
   { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
 
