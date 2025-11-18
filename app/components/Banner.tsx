@@ -39,11 +39,11 @@ const params = usePathname();
      text-center  overflow-hidden`}>
       <div className="relative h-full w-full">
       <Image
-      src={'/images/bg-00001.webp'}
+      src={'/images/bg-01.jpg'}
       alt="banner-image"
       fill
       loading="lazy"
-      className="w-full h-full object-fill object-center filter-[hue-rotate(10deg)_saturate(1.2)]"
+      className="w-full h-full object-fill object-center filter-[hue-rotate(190deg)_saturate(1.2)]"
       />
       {/* <div className="absolute w-full h-full bg-black-60"/> */}
       </div>
