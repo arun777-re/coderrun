@@ -43,12 +43,12 @@ const params = usePathname();
       alt="banner-image"
       fill
       loading="lazy"
-      className="w-full h-full object-fill object-center [filter:hue-rotate(0deg)_saturate(1.2)]"
+      className="w-full h-full object-fill object-center filter-[hue-rotate(10deg)_saturate(1.2)]"
       />
       {/* <div className="absolute w-full h-full bg-black-60"/> */}
       </div>
 
-      <article className="absolute  w-full h-full top-1/2 left-0 z-10 text-white px-6 ">
+      <article className="absolute  w-full h-full top-1/2 left-0 z-10 text-white px-4 ">
         <h1
           className=" mb-6 leading-snug text-accent"
           data-aos="fade-up"
