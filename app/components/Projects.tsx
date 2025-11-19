@@ -39,7 +39,7 @@ const Projects = () => {
             {ProjectsData.map((project, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full md:basis-1/2 lg:basis-1/3 px-2 py-4"
+                className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4 px-2 py-4"
               >
                 <ProjectCard {...project} i={index} />
               </CarouselItem>

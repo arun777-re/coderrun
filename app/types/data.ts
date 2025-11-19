@@ -2,9 +2,9 @@
 
 export type Projects = {
     slug: string;
-    title: string;
-    description: string;
-    image: string;
+    title?: string;
+    description?: string;
+    image?: string;
     video?: string;
     techStack?: string[];
     features?: string[];
