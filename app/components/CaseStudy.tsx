@@ -30,7 +30,7 @@ const CaseStudy: React.FC<CaseStudyProps> = ({
       )}
       
 
-      <h2 className="text-4xl md:text-5xl text-accent font-bold mb-4">{title}</h2>
+      <h2 className="text-4xl md:text-5xl text-accent font-bold mb-4">{title ?? "E-commerce"}</h2>
       {title && <p className="text-secondary text-lg mb-6">{title}</p>}
 
       <p className="text-secondary mb-6">{description}</p>
