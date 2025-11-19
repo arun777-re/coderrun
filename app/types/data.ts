@@ -12,4 +12,4 @@ export type Projects = {
     githubLink?: string;
 }
 
-export type CaseStudyProps = Omit<Projects, 'slug'>;
+export type CaseStudyProps = Partial<Omit<Projects, 'slug'>>;
