@@ -36,7 +36,7 @@ const Services = () => {
   ];
 
   return (
-<section className="py-20 bg-surface overflow-x-hidden" id="services">
+<section className="pt-20 pb-10 sm:py-20 bg-surface overflow-x-hidden" id="services">
   <div className="max-w-6xl mx-auto px-6 text-center">
     <h2
       className="text-4xl font-bold text-primary mb-4"

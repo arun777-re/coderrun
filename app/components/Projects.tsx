@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectsData } from "@/public/images/data/data";
+import { ProjectsData } from "@/public/data/data";
 import ProjectCard from "../__components/card/ProjectCard";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
@@ -9,7 +9,7 @@ import { useRef, useEffect, useCallback } from "react";
 const Projects = () => {
   const autoplay = useRef(
     Autoplay({
-      delay: 3000,
+      delay: 2600,
       stopOnInteraction: false,
       stopOnMouseEnter: true,
     })
@@ -28,7 +28,7 @@ const Projects = () => {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section className="py-10 bg-surface text-center overflow-x-hidden" id="projects">
+    <section className="py-10 bg-surface/80 text-center overflow-x-hidden" id="projects">
       <h2 className="text-3xl md:text-4xl text-accent mb-12" data-aos="fade-up">
         Some of My Projects
       </h2>
@@ -37,7 +37,7 @@ const Projects = () => {
 
         {/* Embla viewport */}
         <div className="embla w-full relative overflow-hidden" ref={emblaRef} >
-          <div className="embla__container flex gap-4 px-4  rounded-lg py-10">
+          <div className="embla__container flex gap-4 ml-2 sm:ml-0 sm:px-4 rounded-lg py-10  ">
             {ProjectsData.map((project, index) => (
               <div
                 key={index}
@@ -47,14 +47,17 @@ const Projects = () => {
                   basis-full 
                   md:basis-1/2 
                   lg:basis-1/3 
-                  xl:basis-1/4
+                 
                 "
               >
                 <ProjectCard {...project} i={index} />
               </div>
             ))}
           </div>
-<div className="absolute flex gap-4 top-110 z-20 items-center left-1/2 transform -translate-x-1/2">
+
+
+        </div>
+        <div className="absolute flex gap-4 top-110 z-20 items-center left-1/2 transform -translate-x-1/2">
           {/* Buttons */}
           <button
             onClick={scrollPrev}
@@ -70,8 +73,6 @@ const Projects = () => {
             ›
           </button>
 </div>
-
-        </div>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ const techs = [
 
 const TechStack = () => {
   return (
-    <section className="py-20 bg-surface text-center overflow-x-hidden">
+    <section className=" py-10 sm:py-20 bg-surface text-center overflow-x-hidden">
       <h2 className="text-3xl md:text-4xl text-accent mb-10" data-aos="fade-up">
         Trusted Technologies Powering CoderRun
       </h2>

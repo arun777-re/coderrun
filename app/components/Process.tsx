@@ -11,7 +11,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section className="py-20 bg-surface/80 text-center overflow-x-hidden">
+    <section className="py-10 sm:py-20 bg-surface/80 text-center overflow-x-hidden">
       <h2 className="text-3xl md:text-4xl text-primary mb-10" data-aos="fade-up">
         Our Process
       </h2>

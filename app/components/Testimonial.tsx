@@ -1,28 +1,12 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
+import { testimonials } from "@/public/data/data";
 
-const testimonials = [
-  {
-    name: "Sarah K.",
-    role: "Founder, ShopSwift",
-    review: "CoderRun transformed our eCommerce business with blazing-fast tech and a beautiful UI.",
-  },
-  {
-    name: "Amit R.",
-    role: "CTO, FinCore",
-    review: "Highly professional and communicative team — delivered exactly what we envisioned.",
-  },
-  {
-    name: "Lena W.",
-    role: "Product Manager, CloudLink",
-    review: "Their scalable architecture design saved us months of rework. Totally recommended!",
-  },
-];
+
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-surface text-center overflow-x-hidden">
+    <section className="py-10 sm:py-20 bg-surface text-center overflow-x-hidden">
       <h2 className="text-3xl md:text-4xl text-accent mb-10" data-aos="fade-up">
         What Our Clients Say
       </h2>
@@ -34,7 +18,7 @@ const Testimonials = () => {
             transition={{ type: "spring", stiffness: 200,damping:26 }}
             data-aos="fade-up"
             data-aos-delay={i * 100}
-            className="bg-background border border-accent/20 p-6 rounded-2xl shadow-lg transition-shadow shadow-xl"
+            className="bg-background border border-accent/20 p-6 rounded-2xl shadow-lg transition-shadow hover:shadow-xl"
           >
             <p className="text-secondary italic mb-4">"{t.review}"</p>
             <h4 className="text-accent font-semibold">{t.name}</h4>

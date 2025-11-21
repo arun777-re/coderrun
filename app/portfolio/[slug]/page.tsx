@@ -4,7 +4,7 @@ import CaseStudy from '@/app/components/CaseStudy';
 import Footer from '@/app/components/Footer';
 import Banner from '@/app/components/Banner';
 import { useParams } from 'next/navigation';
-import { ProjectsData } from '@/public/images/data/data';
+import { ProjectsData } from '@/public/data/data';
 
 const page = () => {
   const {slug} = useParams();
