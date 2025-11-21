@@ -29,7 +29,7 @@ const Projects = () => {
 
   return (
     <section className="py-10 bg-surface/80 text-center overflow-x-hidden" id="projects">
-      <h2 className="text-3xl md:text-4xl text-accent mb-12" data-aos="fade-up">
+      <h2 className="text-3xl md:text-4xl text-accent mb-8" data-aos="fade-up">
         Some of My Projects
       </h2>
 
