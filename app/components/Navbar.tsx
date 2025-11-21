@@ -16,7 +16,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-white/10">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-lg border-b border-black/40">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         {/* logo */}
      <CoderrunLogo/>
