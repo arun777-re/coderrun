@@ -3,30 +3,46 @@ import { Projects } from "@/app/types/data";
 
 export const ProjectsData:Projects[] = [
    {
-    slug:'1',
-    title: "E-commerce Platform",
-    description:"A full-featured MERN e-commerce system with user authentication, product management, shopping cart, and payment integration using Stripe.",
-    image:"/images/product-page.png",
-    video:"/images/shorte-comm.mp4",
-    techStack: ["Next.js", "Node.js", "Express", "MongoDB", "Stripe/Razorpay", "ReduxToolkit","Redis","BullMQ","TailwindCSS","Framer Motion","Render","Upstash","Vercel","Mailgun"],
-    features: [
-      "User Authentication with JWT",
-      "Product Management Dashboard",
-        "Shopping Cart(User & Guest Cart) and Wishlist Functionality",
-        "Secure Payment Integration with Razorpay/Stripe",
-        "Order Tracking and History",
-        "Responsive Design for Mobile and Desktop",
-        "Low Latency and High Performance with Optimized Backend by Caching",
-        "Admin Panel for Managing Products, Orders and Inventory management",
-        "SEO Optimization for Better Search Rankings",
-        "Scalable Architecture to Handle Traffic Spikes",
-        "Concurrency and Race Condition Handling",
-        "Two types of discounts: Coupon System and Product-specific Discounts",
-        "Blogs and Reviews System",
-    ],
-    liveLink: "https://coderrun.info",
-    githubLink: "https://github.com/arun777-re"
-   },
+  slug: "1",
+  title: "E-commerce Platform",
+  description:
+    "A production-ready, scalable E-commerce platform built with clean architecture, secure authentication, real-time cart handling (User & Guest), optimized backend caching, and seamless payment integration. Includes a complete admin panel for managing products, inventory, orders, blogs, and more.",
+  image: "/images/product-page.png",
+  video: "/images/shorte-comm.mp4",
+  techStack: [
+    "Next.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Razorpay/Stripe",
+    "Redux Toolkit",
+    "Redis",
+    "BullMQ",
+    "TailwindCSS",
+    "Framer Motion",
+    "Render",
+    "Upstash",
+    "Vercel",
+    "Mailgun"
+  ],
+  features: [
+    "JWT-based Secure User Authentication",
+    "User Cart, Guest Cart and Wishlist System",
+    "Admin Panel for Product, Orders and Inventory Management",
+    "Product-specific Discounts + Coupon System",
+    "Real-time Order Tracking with Status Flow",
+    "SEO-optimized Pages for Better Search Rankings",
+    "High-performance API Layer with Redis Caching",
+    "Concurrency-safe Cart and Order Logic",
+    "Payment Gateway Integration (Razorpay/Stripe)",
+    "Blog System + Product Reviews",
+    "Responsive Frontend for All Devices",
+    "Scalable Architecture for Traffic Spikes"
+  ],
+  liveLink: "https://coderrun.info",
+  githubLink: "https://github.com/arun777-re"
+},
+
    {
     slug:'2',
     title: "Chat Application",

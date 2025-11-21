@@ -17,7 +17,7 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
        <motion.div
             key={i}
             whileHover={{ scale: .95 }}
-            className="relative w-full md:w-[90vw/2] lg:w-[90vw/3] xl:w-[90vw/4] 
+            className="relative w-full h-[420px] sm:h-auto md:w-[90vw/2] lg:w-[90vw/3] xl:w-[90vw/4] 
             border border-border bg-background rounded-2xl p-6 shadow-lg hover:shadow-accent/40
              transition-all duration-300 flex flex-col"
             data-aos="fade-up"
@@ -27,11 +27,11 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
               <img
                 src={image}
                 alt={title}
-                className="w-full h-40 object-cover rounded-lg mb-4"
+                className="w-full h-[60%] sm:h-44 object-cover rounded-lg mb-4"
               />
             )}
             <h3 className="text-xl font-semibold text-primary mb-2">{title}</h3>
-            <p className="text-secondary text-sm flex-1">{description}</p>
+            <p className="text-secondary text-sm flex-1">{description?.slice(0,170)}...</p>
              {slug && (
               <a
                  onClick={()=>handleClick(slug ?? "/")}
