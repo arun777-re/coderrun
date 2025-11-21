@@ -16,8 +16,9 @@ const ProjectCard:React.FC<ProjectCardProps> = ({
   return (
        <motion.div
             key={i}
-            whileHover={{ scale: 1.05 }}
-            className="bg-background rounded-2xl p-6 shadow-lg hover:shadow-accent/40 transition-all duration-300 flex flex-col"
+            whileHover={{ scale: .95 }}
+            className="relative w-full md:w-[90vw/2] lg:w-[90vw/3] xl:w-[90vw/4]
+            border border-border bg-background rounded-2xl p-6 shadow-lg hover:shadow-accent/40 transition-all duration-300 flex flex-col"
             data-aos="fade-up"
             data-aos-delay={i * 50}
           >

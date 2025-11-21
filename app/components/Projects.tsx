@@ -1,55 +1,77 @@
 "use client";
+
 import { ProjectsData } from "@/public/images/data/data";
 import ProjectCard from "../__components/card/ProjectCard";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { useRef, useEffect, useCallback } from "react";
 
 const Projects = () => {
   const autoplay = useRef(
     Autoplay({
-      delay: 3000,             
+      delay: 3000,
       stopOnInteraction: false,
-      stopOnMouseEnter: true, 
+      stopOnMouseEnter: true,
     })
   );
 
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "start",
+      skipSnaps: false,
+    },
+    [autoplay.current]
+  );
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
   return (
-    <section className="py-20 bg-surface text-center overflow-x-hidden" id="projects">
+    <section className="py-10 bg-surface text-center overflow-x-hidden" id="projects">
       <h2 className="text-3xl md:text-4xl text-accent mb-12" data-aos="fade-up">
         Some of My Projects
       </h2>
 
-      <div className="w-full px-4 md:px-6 h-auto">
-        <Carousel
-          plugins={[autoplay.current]}
-          opts={{
-            align: "start",
-            loop: true                
-          }}
-          className="w-full relative"
-        >
-          <CarouselContent className="px-10">
+      <div className="w-full px-4 md:px-16 h-auto ">
+
+        {/* Embla viewport */}
+        <div className="embla w-full relative overflow-hidden" ref={emblaRef} >
+          <div className="embla__container flex gap-4 px-4  rounded-lg py-10">
             {ProjectsData.map((project, index) => (
-              <CarouselItem
+              <div
                 key={index}
-                className="basis-full md:basis-1/2 lg:basis-1/3 xl:basis-1/4 px-2 py-4"
+                className="
+                  embla__slide
+                  shrink-0
+                  basis-full 
+                  md:basis-1/2 
+                  lg:basis-1/3 
+                  xl:basis-1/4
+                "
               >
                 <ProjectCard {...project} i={index} />
-              </CarouselItem>
+              </div>
             ))}
-          </CarouselContent>
+          </div>
+<div className="absolute flex gap-4 top-110 z-20 items-center left-1/2 transform -translate-x-1/2">
+          {/* Buttons */}
+          <button
+            onClick={scrollPrev}
+            className=" bg-accent/20 p-2 rounded-full"
+          >
+            ‹
+          </button>
 
-          {/* Optional: Next/Prev Buttons */}
-          <CarouselPrevious />
-          <CarouselNext />
-        </Carousel>
+          <button
+            onClick={scrollNext}
+            className="a bg-accent/20 p-2 rounded-full"
+          >
+            ›
+          </button>
+</div>
+
+        </div>
       </div>
     </section>
   );
