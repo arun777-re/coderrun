@@ -73,7 +73,7 @@ const Banner: React.FC<BannerProps> = ({ title, subtitle }) => {
             CoderRun Software Solutions
           </p>
           <Button
-            onClick={() => router.push(ROUTES.SERVICES)}
+            onClick={() => router.push(ROUTES.CONTACT)}
             text="Get Started"
           />
         </article>
