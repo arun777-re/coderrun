@@ -29,9 +29,12 @@ const Projects = () => {
 
   return (
     <section className="py-10 bg-surface/80 text-center overflow-x-hidden" id="projects">
-      <h2 className="text-3xl md:text-4xl text-accent mb-6" data-aos="fade-up">
-        Some of My Projects
-      </h2>
+        <h2
+      className="text-4xl font-bold text-primary mb-4"
+      data-aos="fade-up"
+    >
+      Our Projects
+    </h2>
 
       <div className="w-full px-4 md:px-16 h-auto ">
         {/* Embla viewport */}
